@@ -232,12 +232,13 @@ body {
 }
 
 .highlight-text {
-    font-size: 3.8rem;
+    font-size: 6rem;
     font-weight: 700;
     color: var(--deep-pink);
-    max-width: 950px;
-    margin: 40px auto;
-    line-height: 1.1;
+    width: 100%;
+    max-width: 100%;
+    margin: 60px auto;
+    line-height: 1.0;
     font-family: 'Dancing Script', cursive;
     text-align: center;
 }
@@ -550,4 +551,5 @@ body {
     .intro-title { font-size: 2.5rem; }
     .intro-name { font-size: 1.8rem; }
     .details-grid { margin-top: 0; }
+    .highlight-text { font-size: 12vw; margin: 40px auto; }
 }
