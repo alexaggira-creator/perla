@@ -1,0 +1,524 @@
+:root {
+    --primary-pink: #fb6f92;
+    --soft-pink: #ffccd5;
+    --medium-pink: #ffb3c1;
+    --deep-pink: #c9184a;
+    --cream: #fff0f3;
+    --glass: rgba(255, 255, 255, 0.7);
+    --shadow: 0 8px 32px 0 rgba(251, 111, 146, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--cream);
+    color: #4a4a4a;
+    overflow-x: hidden;
+    line-height: 1.6;
+    background-image: radial-gradient(var(--soft-pink) 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+}
+
+/* --- Intro Overlay --- */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--medium-pink) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* --- Music Toggle --- */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-pink);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.music-btn:hover { transform: scale(1.1); }
+
+.music-btn.playing i {
+    animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+
+/* --- Particles --- */
+.particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: var(--primary-pink);
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: float-particle 10s infinite linear;
+}
+
+@keyframes float-particle {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    50% { opacity: 0.4; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* --- Intro Overlay --- */
+.envelope-wrapper {
+    margin-bottom: 20px;
+}
+
+.envelope-icon {
+    font-size: 4rem;
+    color: white;
+    animation: bounce 2s infinite;
+}
+
+.intro-tagline {
+    font-style: italic;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.intro-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.intro-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.intro-name {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background: var(--primary-pink);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 111, 146, 0.4);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: var(--deep-pink);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 8px 20px;
+    background: transparent;
+    border: 2px solid var(--primary-pink);
+    color: var(--primary-pink);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* --- Main Content --- */
+#main-content {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--soft-pink) 100%);
+    padding-bottom: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Hero Video Section --- */
+.hero-video {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+#main-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.hero-overlay-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-overlay-text .main-title {
+    color: white;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+    margin: 0;
+}
+
+.hero-overlay-text .subtitle {
+    color: var(--soft-pink);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-10px) translateX(-50%);}
+    60% {transform: translateY(-5px) translateX(-50%);}
+}
+
+.divider {
+    margin-top: 20px;
+    color: var(--primary-pink);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+/* --- Story Section --- */
+.story-section {
+    padding: 100px 20px;
+    background: white;
+}
+
+.story-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.photo-frame {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    padding: 15px;
+    background: white;
+    box-shadow: var(--shadow);
+    transform: rotate(-3deg);
+}
+
+.photo-frame img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.photo-frame::after {
+    content: '❤';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--primary-pink);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: var(--primary-pink);
+    margin-bottom: 20px;
+}
+
+/* --- Gifts Section --- */
+.gifts-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: var(--cream);
+}
+
+.gift-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.gift-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 120px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.gift-item:hover { transform: translateY(-10px); color: var(--primary-pink); }
+
+.gift-item i { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-pink);
+    margin-bottom: 15px;
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--deep-pink);
+    font-size: 1.2rem;
+}
+
+.main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5.5rem;
+    color: var(--primary-pink);
+    margin: 10px 0;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--deep-pink);
+}
+
+.hero-text {
+    max-width: 500px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* --- Floating Elements --- */
+.floating-bunnies {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-bunny, .floating-carrot {
+    position: absolute;
+    color: var(--medium-pink);
+    opacity: 0.3;
+    font-size: 2rem;
+    animation: float 6s infinite ease-in-out;
+}
+
+.floating-bunny:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.floating-carrot:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; font-size: 1.5rem;}
+.floating-bunny:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Details Section --- */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: -50px auto 40px auto;
+}
+
+.detail-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+}
+
+.detail-card i {
+    font-size: 2.5rem;
+    color: var(--primary-pink);
+    margin-bottom: 15px;
+}
+
+.detail-card h3 {
+    margin-bottom: 10px;
+    color: var(--deep-pink);
+}
+
+/* --- Countdown --- */
+.countdown-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    margin: 40px 0;
+}
+
+.countdown-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: var(--primary-pink);
+    margin-bottom: 20px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-block span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--deep-pink);
+}
+
+.time-block label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #888;
+}
+
+/* --- RSVP Section --- */
+.rsvp-section {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gift-box {
+    background: var(--soft-pink);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 2px dashed var(--primary-pink);
+}
+
+.gift-box i {
+    font-size: 2rem;
+    color: var(--primary-pink);
+    margin-bottom: 10px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #128c7e;
+    transform: scale(1.05);
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 30px;
+    font-style: italic;
+    color: var(--deep-pink);
+    opacity: 0.7;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 600px) {
+    .main-title { font-size: 4rem; }
+    .intro-title { font-size: 2.5rem; }
+    .intro-name { font-size: 1.8rem; }
+    .details-grid { margin-top: 0; }
+}

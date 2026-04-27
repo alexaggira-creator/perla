@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower de Perla | Invitación Digital</title>
+    <meta name="description" content="Acompáñanos a celebrar la llegada de nuestra pequeña Perla.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Floating Music Toggle -->
+    <button id="music-toggle" class="music-btn hidden">
+        <i class="fas fa-music"></i>
+        <audio id="bg-music" loop>
+            <source src="monume-lullaby-baby-sleep-music-509508.mp3" type="audio/mpeg">
+        </audio>
+    </button>
+
+    <!-- Intro Cover (Sobretodo) -->
+    <div id="video-intro" class="intro-overlay">
+        <div class="particles-container" id="particles-intro"></div>
+        <div class="intro-content" data-aos="zoom-in">
+            <div class="envelope-wrapper">
+                <div class="envelope-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <h1 class="intro-title">Baby Shower</h1>
+            <h2 class="intro-name">Perla</h2>
+            <p class="intro-tagline">Una nueva vida está por comenzar...</p>
+            <button id="enter-btn" class="btn-primary">Abrir Invitación</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="hidden">
+        <!-- Hero Section with Video -->
+        <section id="hero" class="hero-video">
+            <video id="main-video" playsinline loop muted>
+                <source src="WhatsApp Video 2026-04-26 at 8.01.51 PM.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay-text">
+                <span class="subtitle">¡Estamos esperando a!</span>
+                <h1 class="main-title">Perla</h1>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Floating Decoration Section -->
+        <section class="floating-decoration">
+            <div class="particles-container" id="particles-main"></div>
+            <div class="hero-content" data-aos="fade-up">
+                <p class="hero-text">Te invitamos a compartir con nosotros la alegría de su pronta llegada.</p>
+                <div class="divider">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story/Photo Section -->
+        <section id="story" class="story-section">
+            <div class="container">
+                <div class="photo-frame" data-aos="flip-left">
+                    <img src="https://images.unsplash.com/photo-1519689689378-43d7064763b6?q=80&w=500" alt="Baby anticipation">
+                </div>
+                <div class="story-text" data-aos="fade-left">
+                    <h2 class="section-title">Nuestra Dulce Espera</h2>
+                    <p>Cada día que pasa es un paso más cerca de conocerte, pequeña Perla. Eres el sueño más hermoso que se hace realidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section id="details" class="details-grid">
+            <div class="detail-card" id="date-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-icon"><i class="fas fa-calendar-heart"></i></div>
+                <h3>¿Cuándo?</h3>
+                <p class="highlight">Sábado, 24 de Mayo</p>
+                <p>4:00 PM</p>
+            </div>
+            <div class="detail-card" id="location-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>¿Dónde?</h3>
+                <p class="highlight">Residencial Los Olivos</p>
+                <p>Calle Ficticia #123, Ciudad</p>
+                <a href="https://maps.app.goo.gl/..." target="_blank" class="btn-secondary">Ver ubicación exacta</a>
+            </div>
+        </section>
+
+        <!-- Gift Suggestions -->
+        <section id="gifts" class="gifts-section">
+            <h2 class="section-title" data-aos="fade-down">Sugerencias de Regalo</h2>
+            <div class="gift-grid">
+                <div class="gift-item" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-baby-carriage"></i>
+                    <span>Pañales</span>
+                </div>
+                <div class="gift-item" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Ropita</span>
+                </div>
+                <div class="gift-item" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-socks"></i>
+                    <span>Accesorios</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section id="countdown" class="countdown-section">
+            <h2 data-aos="fade-up">Faltan...</h2>
+            <div id="timer" class="timer" data-aos="zoom-in">
+                <div class="time-block">
+                    <span id="days">00</span>
+                    <label>Días</label>
+                </div>
+                <div class="time-block">
+                    <span id="hours">00</span>
+                    <label>Horas</label>
+                </div>
+                <div class="time-block">
+                    <span id="minutes">00</span>
+                    <label>Minutos</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift Registry / RSVP -->
+        <section id="rsvp" class="rsvp-section" data-aos="fade-up">
+            <div class="rsvp-actions">
+                <h2 class="section-title">¡Confirma tu lugar!</h2>
+                <p>Por favor, confirma tu asistencia antes del 15 de mayo.</p>
+                <a href="https://wa.me/57..." class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Confirmar vía WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Hecho con ❤️ para Perla</p>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
