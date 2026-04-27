@@ -232,15 +232,16 @@ body {
 }
 
 .highlight-text {
-    font-size: 6rem;
-    font-weight: 700;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
     color: var(--deep-pink);
-    width: 100%;
-    max-width: 100%;
-    margin: 60px auto;
-    line-height: 1.0;
-    font-family: 'Dancing Script', cursive;
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    line-height: 1.4;
     text-align: center;
+    text-shadow: 1px 1px 2px rgba(251, 111, 146, 0.1);
 }
 
 .divider {
@@ -551,5 +552,5 @@ body {
     .intro-title { font-size: 2.5rem; }
     .intro-name { font-size: 1.8rem; }
     .details-grid { margin-top: 0; }
-    .highlight-text { font-size: 12vw; margin: 40px auto; }
+    .highlight-text { font-size: 2.2rem; margin: 30px auto; width: 95%; }
 }
