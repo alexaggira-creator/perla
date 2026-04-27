@@ -232,27 +232,23 @@ body {
 }
 
 .highlight-text {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--deep-pink);
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
-    line-height: 1.5;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 30px;
-    border-radius: 30px;
-    border: 2px solid var(--soft-pink);
-    box-shadow: 0 10px 30px rgba(251, 111, 146, 0.1);
-    backdrop-filter: blur(5px);
+    line-height: 1.2;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: none;
 }
 
 .divider {
-    margin: 40px auto 0 auto;
+    margin: 20px auto 0 auto;
     color: var(--primary-pink);
     display: flex;
     justify-content: center;
     gap: 15px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /* --- Story Section --- */
